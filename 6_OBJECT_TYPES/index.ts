@@ -42,15 +42,15 @@ showUserDetails(u1)
 showUserDetails(u2)
 
 // 3 - readonly
-interface Car {
+interface Car{
   brand: string
   readonly wheels: number
 }
-
-const fusca: Car = {
-  brand: 'Vw',
-  wheels: 4,
+const fusca:Car = {
+  brand: "VW",
+  wheels: 4
 }
+console.log(fusca)
 
 // fusca.wheels = 5
 
@@ -60,20 +60,12 @@ interface CoordObject {
 }
 
 let coords: CoordObject = {
-  x: 10,
+  x: 10
 }
 
-// coords.y = 'teste'
 coords.y = 15
 
 console.log(coords)
-
-interface OnlyNumberArray {
-  [index: number]: number
-}
-
-const arr1: OnlyNumberArray = [1, 2, 3]
-// const arr2: OnlyNumberArray = ['1', '2', '3']
 
 // 5 - extending types
 interface Human {
@@ -81,40 +73,41 @@ interface Human {
   age: number
 }
 
-interface SuperHuman extends Human {
+interface SuperHuman extends Human{
   superpowers: string[]
 }
 
-const goku: SuperHuman = {
-  name: 'Goku',
-  age: 50,
-  superpowers: ['Kamehameha', 'Genki Dama'],
+const eduardo: SuperHuman = {
+  name: "eduardo",
+  age: 15,
+  superpowers: ["voar", "super forca"]
 }
 
-console.log(goku)
+console.log(eduardo)
+console.log(eduardo.superpowers)
+
 
 // 6 - intersection types
-interface Character {
+interface Character{
   name: string
 }
 
-interface Gun {
+interface Gun{
   type: string
-  caliber: number
+  caliber:number
 }
-
 type HumanWithGun = Character & Gun
 
 const arnold: HumanWithGun = {
-  name: 'Arnold',
-  type: 'Shotgun',
-  caliber: 12,
+  name:"Arnold",
+  type: "shotgun",
+  caliber: 12
 }
 
 console.log(arnold)
+console.log(arnold.type)
 
 // 7 - read only array
-
 let myArray: ReadonlyArray<string> = ['Maçã', 'Laranja', 'Pêra']
 
 // myArray[3] = 'Mamão'
@@ -132,9 +125,11 @@ console.log(myArray)
 // 8 - tuplas
 type fiveNumbers = [number, number, number, number, number]
 
-const myNumberArray: fiveNumbers = [1, 2, 3, 4, 5]
+const myNumberArray: fiveNumbers = [1,2,3,4,5]
 // const myNumberArray2: fiveNumbers = [1,2,3,4,5,6]
-// const mixedArray: fiveNumbers = ["teste", 1]
+// const mixedArray: fiveNumbers= [1,true,2,3,4]
+
+console.log(myNumberArray)
 
 type nameAndAge = [string, number]
 

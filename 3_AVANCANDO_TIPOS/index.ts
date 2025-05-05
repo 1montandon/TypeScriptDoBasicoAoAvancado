@@ -196,21 +196,17 @@ const p = document.getElementById('some-p')
 
 console.log(p!.innerText)
 
-// 17 - big int
+// 17 - bitint
 
-let n: bigint
+let n:bigint
 
 // n = 1
 
-n = 1000n
+n = 1n
 
-// console.log(n + 1)
+// 18 - symbol
 
-console.log(n + 10n)
-
-// 17 - symbol
-
-let symbolA = Symbol('a')
-let symbolB = Symbol('a')
+let symbolA:symbol = Symbol("a")
+let symbolB = Symbol("a")
 
 console.log(symbolA === symbolB)

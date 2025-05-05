@@ -20,7 +20,7 @@ console.log(myCar);
 console.log(myPen);
 // 4 - type parameters
 function getSomeKey(obj, key) {
-    return `A chave ${key} tem o valor ${obj[key]}`;
+    return `A chave ${obj} tem o valor ${obj[key]}`;
 }
 const server = {
     hd: '2TB',
@@ -37,18 +37,18 @@ const myChar = {
 };
 console.log(showCharName(myChar, 'name'));
 // console.log(showCharName([0]))
-// 6 - typeof type operator
-const userName = 'Matheus';
-const userName2 = 'João';
+// 6 - type of type operator
+const userName = "Eduardo";
+const userName2 = " Joao";
 const userName4 = 'Joaquim';
 const newTruck = {
     km: 10000,
     kg: 5000,
-    description: 'Caminhão para pouca carga',
+    description: "Caminhao de pouca carga"
 };
-function showTruckKm(km) {
-    console.log(`O caminhão já rodou ${km} kms`);
+function showKm(km) {
+    console.log(`o vaiculo a tem km de ${km}`);
 }
-showTruckKm(newTruck.km);
+showKm(newTruck.km);
 const someVar = 1;
-const testing = "some text";
+// const someVar2: myType = 'asd'

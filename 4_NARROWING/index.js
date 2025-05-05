@@ -1,39 +1,18 @@
 "use strict";
 // 1 - type guard
 function sum(a, b) {
-    if (typeof a === 'string' && typeof b === 'string') {
+    if (typeof a === "string" && typeof b === "string") {
         console.log(parseFloat(a) + parseFloat(b));
     }
-    else if (typeof a === 'number' && typeof b === 'number') {
+    else if (typeof a === "number" && typeof b === "number") {
         console.log(a + b);
     }
     else {
-        console.log('Impossível realizar a soma!');
+        console.log("impossivel realizar a soma!");
     }
 }
-sum(1, 2);
-sum('4', '4');
-sum('5', 1);
-// 2 - checando se valor existe
-function operations(arr, operation) {
-    if (operation) {
-        if (operation === 'sum') {
-            const sum = arr.reduce((i, total) => i + total);
-            console.log(sum);
-        }
-        else if (operation === 'multiply') {
-            const multiply = arr.reduce((i, total) => i * total);
-            console.log(multiply);
-        }
-    }
-    else {
-        console.log('Por favor, defina uma operação!');
-    }
-}
-operations([10, 20, 30], 'sum');
-operations([10, 20, 30], 'multiply');
-operations([10, 20, 30], '');
-// 3 - instanceof
+sum("4", 2);
+// 3 - instance of
 class User {
     constructor(name) {
         this.name = name;
@@ -44,46 +23,34 @@ class SuperUser extends User {
         super(name);
     }
 }
-const jhon = new User('Jhon');
-const paul = new SuperUser('Paul');
+const jhon = new User("jhon");
+const paul = new SuperUser("paul");
 function userGreeting(user) {
     if (user instanceof SuperUser) {
-        console.log(`Olá ${user.name}, deseja ver os dados?`);
+        console.log(`Ola ${user.name}, ADM`);
     }
     else if (user instanceof User) {
-        console.log(`Olá ${user.name}!`);
+        console.log(`Ola ${user.name}`);
     }
 }
-userGreeting(jhon);
-userGreeting(paul);
-// 4 - operador in
+// 4 - operador in 
 class Dog {
-    constructor(name, breed) {
+    constructor(name, bread) {
         this.name = name;
-        if (breed) {
-            this.breed = breed;
+        if (bread) {
+            this.bread = bread;
         }
     }
 }
-const turca = new Dog('Turca');
-const bob = new Dog('Bob', 'Pastor Alemão');
+const pitucha = new Dog("Pitucha");
+const aurora = new Dog("Aurora", "Labrador");
 function showDogDetails(dog) {
-    if ('breed' in dog) {
-        console.log(`O cachorro é da raça: ${dog.breed}`);
+    if ('bread' in dog) {
+        console.log(`O cachorro eh da raca ${dog.bread}`);
     }
     else {
-        console.log('O cachorro é um SRD!');
+        console.log('SRD');
     }
 }
-showDogDetails(turca);
-showDogDetails(bob);
-function showUserReview(review) {
-    if (!review) {
-        console.log('Você não avaliou o produto!');
-        return;
-    }
-    console.log(`A nota que você deu foi ${review}, obrigado!`);
-}
-showUserReview(false);
-showUserReview(3);
-showUserReview(4);
+showDogDetails(pitucha);
+showDogDetails(aurora);

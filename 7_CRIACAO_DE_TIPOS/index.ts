@@ -36,9 +36,8 @@ console.log(myCar)
 console.log(myPen)
 
 // 4 - type parameters
-
 function getSomeKey<T, K extends keyof T>(obj: T, key: K) {
-  return `A chave ${key} tem o valor ${obj[key]}`
+  return `A chave ${obj} tem o valor ${obj[key]}`
 }
 
 const server = {
@@ -49,7 +48,6 @@ const server = {
 console.log(getSomeKey(server, 'ram'))
 
 // 5 - keyof type operator
-
 type Character = { name: string; age: number; hasDriveLicense: boolean }
 
 type C = keyof Character
@@ -67,10 +65,10 @@ const myChar: Character = {
 console.log(showCharName(myChar, 'name'))
 // console.log(showCharName([0]))
 
-// 6 - typeof type operator
-const userName: string = 'Matheus'
+// 6 - type of type operator
+const userName: string = "Eduardo"
 
-const userName2: typeof userName = 'João'
+const userName2: typeof userName = " Joao"
 
 // const userName3: typeof userName = 3
 
@@ -78,22 +76,22 @@ type x = typeof userName
 
 const userName4: x = 'Joaquim'
 
-// 7 - indexed access types
-type Truck = { km: number; kg: number; description: string }
+// 7 - index access types
+type Truck = {km: number, kg:number, description: string}
 
 type Km = Truck['km']
 
-const newTruck: Truck = {
+const newTruck:Truck = {
   km: 10000,
   kg: 5000,
-  description: 'Caminhão para pouca carga',
+  description: "Caminhao de pouca carga"
 }
 
-function showTruckKm(km: Km) {
-  console.log(`O caminhão já rodou ${km} kms`)
+function showKm(km: Km){
+  console.log(`o vaiculo a tem km de ${km}`)
 }
 
-showTruckKm(newTruck.km)
+showKm(newTruck.km)
 
 // 8 - conditional types
 interface A {}
@@ -106,7 +104,6 @@ const someVar: myType = 1
 // const someVar2: myType = 'asd'
 
 // 9 - template literal types
-
 type TestA = "text"
 
 type CustomType = `some ${TestA}`
